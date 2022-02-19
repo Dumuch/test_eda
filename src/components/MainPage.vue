@@ -145,7 +145,7 @@ export default {
           (item) => item.id === this.form.selected.id
         );
 
-        const findProduct = this.cart.find((item) => item.id === product.id);
+        // const findProduct = this.cart.find((item) => item.id === product.id);
 
         // if (findProduct) {
         // console.log(findProduct);
