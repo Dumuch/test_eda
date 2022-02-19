@@ -151,7 +151,7 @@ export default {
         // console.log(findProduct);
         // } else {
         this.cart.push({
-          id: product.id,
+          id: Date.now(),
           title: product.title,
           quantity: this.form.quantity,
           price: product.price * this.form.quantity,
