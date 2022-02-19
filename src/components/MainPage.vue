@@ -81,7 +81,7 @@
                 {{ item.quantity }} шт.
               </td>
               <td class="title w-20 title--align-right w-sm-50 min-fit-content">
-                {{ item.price.toFixed(3) }}
+                {{ item.price.toFixed(2) }}
               </td>
             </tr>
           </tbody>
@@ -117,7 +117,7 @@
 
 <script>
 export default {
-  title: "HelloWorld",
+  title: "MainPage",
   data() {
     return {
       productList: [],
@@ -144,12 +144,19 @@ export default {
         const product = this.productList.find(
           (item) => item.id === this.form.selected.id
         );
+
+        const findProduct = this.cart.find((item) => item.id === product.id);
+
+        // if (findProduct) {
+        // console.log(findProduct);
+        // } else {
         this.cart.push({
-          id: Date.now(),
+          id: product.id,
           title: product.title,
           quantity: this.form.quantity,
           price: product.price * this.form.quantity,
         });
+        // }
 
         this.form.selected = null;
         this.form.quantity = null;
